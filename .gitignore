@@ -14,16 +14,11 @@ sysinfo.txt
 *.pidb.meta
 
 # Visual Studio 2015 cache directory
-<<<<<<< HEAD
 /.vs/
 .vs/
 .vs/*
-sqlite3/
+/sqlite3/
 
-=======
-/.vs/*
-/v15/
->>>>>>> 06148e4719b11a85864ef1ecdf72214dbacb4257
 ###
 # VS/MD solution and project files
 ###
