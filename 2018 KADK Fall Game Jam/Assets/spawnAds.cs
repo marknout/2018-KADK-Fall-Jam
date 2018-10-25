@@ -7,7 +7,8 @@ public class spawnAds : MonoBehaviour {
     public GameObject[] ads;
     public float timeBtwSpawn = 1f;
     public float elapsedTime = 0f;
-    public Vector2 spawnLocationRange = new Vector2()
+    public Vector2 spawnLocationRange = new Vector2(0f, 0f);
+    public GameObject spawner = GameObject.FindGameObjectWithTag("Spawner");
 
     // Update is called once per frame
     void Update()
@@ -22,6 +23,8 @@ public class spawnAds : MonoBehaviour {
     }
 
     void spawnAd (GameObject ad) {
-        Instantiate(ad, Vector3.zero, Quaternion.identity);
+
+        Vector3 spawnLocation = new Vector3(Random.Range(-spawnLocationRange.x, spawnLocationRange.x), Random.Range(-spawnLocationRange.y, spawnLocationRange.y), 0f);
+        Instantiate(ad, spawnLocation, Quaternion.identity, spawner.transform);
         }
     }
