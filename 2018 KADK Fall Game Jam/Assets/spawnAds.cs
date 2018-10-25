@@ -22,7 +22,7 @@ public class spawnAds : MonoBehaviour {
     {
         elapsedTime += Time.deltaTime;
 
-        if (elapsedTime > timeBtwSpawn)
+        if (elapsedTime >= timeBtwSpawn)
         {
             elapsedTime = 0;
             spawnAd(ads[Random.Range(0, ads.Length)]);
