@@ -214,13 +214,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1417669012}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 78c05e7f998eb63488256f39cfeccb1c, type: 3}
+  m_Script: {fileID: 11500000, guid: 97f58c8399c91674fa09d3959d2fb81e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   ads: []
   timeBtwSpawn: 1
   elapsedTime: 0
-  spawnLocationRange: {x: 3, y: 3}
+  spawnLocationRange: {x: 2, y: 2}
   spawner: {fileID: 0}
   closeButton: {fileID: 1459493685203034, guid: cf7236401122a4c459f1824ec211ac6d,
     type: 2}
