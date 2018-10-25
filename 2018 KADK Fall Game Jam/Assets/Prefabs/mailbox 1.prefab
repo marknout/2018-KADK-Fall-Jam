@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4476198141278452}
   - component: {fileID: 212371762009927510}
-  - component: {fileID: 60779322799587852}
+  - component: {fileID: 60307417149951412}
   m_Layer: 0
   m_Name: mailbox 1
   m_TagString: Untagged
@@ -41,7 +41,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!60 &60779322799587852
+--- !u!60 &60307417149951412
 PolygonCollider2D:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -57,7 +57,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.11, y: 2.94}
+    oldSize: {x: 1.2057143, y: 1.68}
     newSize: {x: 2.11, y: 2.94}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -65,16 +65,16 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.825, y: 1.09}
-      - {x: 0.73499995, y: 1.22}
-      - {x: -0.585, y: 1.22}
-      - {x: -0.73499995, y: 1.12}
-      - {x: -0.755, y: 1.0799999}
-      - {x: -0.755, y: -1.4699999}
-      - {x: -0.515, y: -1.4699999}
-      - {x: -0.505, y: -1.4599999}
-      - {x: -0.345, y: -1.4699999}
-      - {x: 0.825, y: -1.4699999}
+    - - {x: 0.47142857, y: 0.62285715}
+      - {x: 0.42, y: 0.69714284}
+      - {x: -0.3342857, y: 0.69714284}
+      - {x: -0.42, y: 0.64}
+      - {x: -0.43142858, y: 0.61714286}
+      - {x: -0.43142858, y: -0.84}
+      - {x: -0.2942857, y: -0.84}
+      - {x: -0.28857142, y: -0.8342857}
+      - {x: -0.19714285, y: -0.84}
+      - {x: 0.47142857, y: -0.84}
 --- !u!212 &212371762009927510
 SpriteRenderer:
   m_ObjectHideFlags: 1
