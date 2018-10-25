@@ -57,3 +57,5 @@ PlayMaker.dll.meta
 *.ide
 *.ide-shm
 *.ide-wal
+*.ide-shm
+*.ide
