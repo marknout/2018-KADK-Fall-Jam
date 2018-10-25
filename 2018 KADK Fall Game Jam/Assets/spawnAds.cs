@@ -7,6 +7,7 @@ public class spawnAds : MonoBehaviour {
     public GameObject[] ads;
     public float timeBtwSpawn = 1f;
     public float elapsedTime = 0f;
+    public Vector2 spawnLocationRange = new Vector2()
 
     // Update is called once per frame
     void Update()
