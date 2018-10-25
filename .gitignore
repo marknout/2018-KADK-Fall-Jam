@@ -17,6 +17,7 @@ sysinfo.txt
 /.vs/
 .vs/
 .vs/*
+sqlite/
 
 ###
 # VS/MD solution and project files
