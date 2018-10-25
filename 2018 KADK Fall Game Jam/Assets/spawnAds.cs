@@ -9,10 +9,12 @@ public class spawnAds : MonoBehaviour {
     public float elapsedTime = 0f;
     public Vector2 spawnLocationRange = new Vector2(0f, 0f);
     public GameObject spawner;
+    public GameObject closeButton;
 
     void Start()
     {
         spawner = GameObject.FindGameObjectWithTag("Spawner");
+        ads = Resources.LoadAll<GameObject>("Ads");
     }
 
     // Update is called once per frame
@@ -27,8 +29,19 @@ public class spawnAds : MonoBehaviour {
         }
     }
 
-    void spawnAd (GameObject ad) {
+    void spawnAd (GameObject ad)
+    {
         Vector3 spawnLocation = new Vector3(Random.Range(-spawnLocationRange.x, spawnLocationRange.x), Random.Range(-spawnLocationRange.y, spawnLocationRange.y), 0f);
-        Instantiate(ad, spawnLocation, Quaternion.identity, spawner.transform);
-        }
+        var newAd = Instantiate(ad, spawnLocation, Quaternion.identity, spawner.transform);
+        var button = Instantiate(closeButton, newAd.transform.position + randomCorner(newAd), Quaternion.identity, newAd.transform);
     }
+
+    Vector3 randomCorner(GameObject ad)
+    {
+        Vector3[] corners = new Vector3[4];
+        ad.GetComponent<RectTransform>().GetLocalCorners(corners);
+        var q = corners[Random.Range(0, corners.Length)]; Debug.Log(q);
+        return q;
+    }
+
+}
