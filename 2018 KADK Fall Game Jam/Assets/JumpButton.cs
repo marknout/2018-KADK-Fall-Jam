@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class JumpButton : MonoBehaviour {
     public GameObject player;
     PlayerMovement playerController;
+
 
     private void Start()
     {
@@ -12,7 +14,7 @@ public class JumpButton : MonoBehaviour {
         playerController = player.GetComponent<PlayerMovement>();
     }
 
-    private void OnMouseDown()
+    private void TriggerJump()
     {
         playerController.Jump();
     }
