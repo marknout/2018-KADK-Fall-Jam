@@ -6,7 +6,9 @@ using UnityEngine.UI;
 public class spawnAdsCanvas : MonoBehaviour {
 
     public Sprite[] adSprites;
-    public float timeBtwSpawn = 1f;
+    public float minimumTimeBetweenSpawns = 1f;
+    public float maximumTimeBetweenSpawns = 1f;
+    float timeBtwSpawn;
     public float elapsedTime = 0f;
     public Vector2 spawnLocationRange = new Vector2(0f, 0f);
     public GameObject spawner;
@@ -16,7 +18,8 @@ public class spawnAdsCanvas : MonoBehaviour {
     void Start()
     {
         spawner = GameObject.FindGameObjectWithTag("Spawner");
-        adSprites = Resources.LoadAll<Sprite>("AdSprites");
+        adSprites = Resources.LoadAll<Sprite>("AdSprites"); 
+        timeBtwSpawn = Random.Range(minimumTimeBetweenSpawns, maximumTimeBetweenSpawns);
     }
 
     // Update is called once per frame
@@ -28,6 +31,7 @@ public class spawnAdsCanvas : MonoBehaviour {
         {
             elapsedTime = 0;
             spawnAd();
+            timeBtwSpawn = Random.Range(minimumTimeBetweenSpawns, maximumTimeBetweenSpawns);
         }
     }
 
@@ -36,8 +40,11 @@ public class spawnAdsCanvas : MonoBehaviour {
         Sprite adSprite = adSprites[Random.Range(0, adSprites.Length)];
         Vector2 adSize = adSprite.bounds.extents * adSprite.pixelsPerUnit;
 
-        Vector3 spawnLocation = new Vector3(Random.Range(-spawnLocationRange.x, spawnLocationRange.x), Random.Range(-spawnLocationRange.y, spawnLocationRange.y), 0f);
-        var newAd = Instantiate(adImagePrefab, spawner.transform.position + spawnLocation * adSprite.pixelsPerUnit, Quaternion.identity, spawner.transform);
+        float spawnLocX = spawnLocationRange.x * adSprite.pixelsPerUnit;
+        float spawnLocY = spawnLocationRange.y * adSprite.pixelsPerUnit;
+
+        Vector3 spawnLocation = new Vector3(Random.Range(-spawnLocX, spawnLocX), Random.Range(-spawnLocY, spawnLocY), 0f);
+        var newAd = Instantiate(adImagePrefab, spawner.transform.position + spawnLocation * adSprite.pixelsPerUnit, Quaternion.identity, spawner.transform); // check why this doesn't work, it sucks.
         newAd.GetComponent<Image>().sprite = adSprite;
         newAd.GetComponent<RectTransform>().sizeDelta = adSize;
 

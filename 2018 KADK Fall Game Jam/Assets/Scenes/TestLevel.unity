@@ -1412,12 +1412,22 @@ Prefab:
     - target: {fileID: 114677779231500902, guid: 48b0ac27e5de8e14dad60072cf386db3,
         type: 2}
       propertyPath: spawnLocationRange.x
-      value: 1
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 114677779231500902, guid: 48b0ac27e5de8e14dad60072cf386db3,
         type: 2}
       propertyPath: spawnLocationRange.y
-      value: 1
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114677779231500902, guid: 48b0ac27e5de8e14dad60072cf386db3,
+        type: 2}
+      propertyPath: maximumTimeBetweenSpawns
+      value: 1.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 114677779231500902, guid: 48b0ac27e5de8e14dad60072cf386db3,
+        type: 2}
+      propertyPath: minimumTimeBetweenSpawns
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114949858357504488, guid: 48b0ac27e5de8e14dad60072cf386db3, type: 2}
