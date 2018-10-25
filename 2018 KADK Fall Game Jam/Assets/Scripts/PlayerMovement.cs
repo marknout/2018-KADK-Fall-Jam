@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour {
 
     public float ForwardForce = 200f;
     public float JumpForce = 500f;
+    public bool JumpCheck = true;
 
 	// Use this for initialization
 	void Start () {
@@ -29,11 +30,21 @@ public class PlayerMovement : MonoBehaviour {
 
         }
 
-        if (Input.GetKey("space"))
+        if (Input.GetKey("space") && JumpCheck == true)
         {
 
             RB.AddForce(0, JumpForce * Time.deltaTime, 0, ForceMode.VelocityChange);
+            JumpCheck = false;
 
+        }
+
+    }
+
+    void OnCollisionEnter(Collision CollisionInfo)
+    {
+        if (CollisionInfo.collider.tag == "JumpStarter")
+        {
+            JumpCheck = true;
         }
 
     }
