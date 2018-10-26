@@ -11,10 +11,12 @@ public class PlayerMovement : MonoBehaviour {
     public Animator anim;
     public bool autoMove;
     Vector3 oldPos;
+    AudioSource aSource;
 
     // Use this for initialization
     void Start () {
         anim = GetComponent<Animator>();
+        aSource = GetComponent<AudioSource>();
 	}
 
     void Update()
@@ -79,6 +81,7 @@ public class PlayerMovement : MonoBehaviour {
             //RB.AddForce(0, JumpForce * Time.deltaTime, 0, ForceMode.VelocityChange);
             JumpCheck = false;
             anim.SetBool("jumping", true);
+            aSource.Play();
         }
     }
 

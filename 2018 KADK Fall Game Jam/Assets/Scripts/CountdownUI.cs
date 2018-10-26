@@ -30,7 +30,11 @@ public class CountdownUI : MonoBehaviour
         {
             UIText.text = "0.00";
             Timer = 0.0f;
-            SceneManager.LoadScene("TestLevel");
+            SceneManager.LoadScene("menu");
+        }
+
+        if (Input.GetKeyDown(KeyCode.Q)) {
+            SceneManager.LoadScene("menu");
         }
 
     }
