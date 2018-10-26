@@ -19,14 +19,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4264411980022646}
+  - component: {fileID: 114584203067487320}
   - component: {fileID: 212168182466428910}
   - component: {fileID: 95668465557948474}
   - component: {fileID: 50918670694171904}
   - component: {fileID: 70057435780716014}
-  - component: {fileID: 114584203067487320}
   m_Layer: 0
   m_Name: Player (1)
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -110,8 +110,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RB: {fileID: 50918670694171904}
   ForwardForce: 20
+  forwardTransform: 2.2
   JumpForce: 50
   JumpCheck: 1
+  anim: {fileID: 0}
+  autoMove: 1
 --- !u!212 &212168182466428910
 SpriteRenderer:
   m_ObjectHideFlags: 1
