@@ -19,6 +19,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4648642302381044}
+  - component: {fileID: 114381931405850270}
   m_Layer: 0
   m_Name: InstantiatorBase
   m_TagString: Untagged
@@ -95,6 +96,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 20, y: 2}
   m_EdgeRadius: 0
+--- !u!114 &114381931405850270
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1180619687429868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6880b3e80b34c0348973fd26f1e20a30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numberOfChunks: 10
+  chunks: []
 --- !u!212 &212316430923873562
 SpriteRenderer:
   m_ObjectHideFlags: 1
