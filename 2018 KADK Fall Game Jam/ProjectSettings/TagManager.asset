@@ -7,6 +7,7 @@ TagManager:
   - Spawner
   - Undefined
   - JumpStart
+  - Canvas
   layers:
   - Default
   - TransparentFX

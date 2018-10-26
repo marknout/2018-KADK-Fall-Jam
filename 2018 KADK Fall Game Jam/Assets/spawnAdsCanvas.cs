@@ -14,12 +14,16 @@ public class spawnAdsCanvas : MonoBehaviour {
     public GameObject spawner;
     public GameObject closeButton;
     public GameObject adImagePrefab;
+    AudioSource audioSource;
+    AudioClip[] popSounds;
 
     void Start()
     {
         spawner = GameObject.FindGameObjectWithTag("Spawner");
-        adSprites = Resources.LoadAll<Sprite>("AdSprites"); 
+        adSprites = Resources.LoadAll<Sprite>("AdSprites");
+        popSounds = Resources.LoadAll<AudioClip>("PopSounds");
         timeBtwSpawn = Random.Range(minimumTimeBetweenSpawns, maximumTimeBetweenSpawns);
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -44,9 +48,13 @@ public class spawnAdsCanvas : MonoBehaviour {
         float spawnLocY = spawnLocationRange.y * adSprite.pixelsPerUnit;
 
         Vector3 spawnLocation = new Vector3(Random.Range(-spawnLocX, spawnLocX), Random.Range(-spawnLocY, spawnLocY), 0f);
-        var newAd = Instantiate(adImagePrefab, spawner.transform.position + spawnLocation * adSprite.pixelsPerUnit, Quaternion.identity, spawner.transform); // check why this doesn't work, it sucks.
+        var newAd = Instantiate(adImagePrefab, spawner.transform.position + spawnLocation, Quaternion.identity, spawner.transform); // check why this doesn't work, it sucks.
         newAd.GetComponent<Image>().sprite = adSprite;
         newAd.GetComponent<RectTransform>().sizeDelta = adSize;
+
+        AudioClip popSound = popSounds[Random.Range(0, popSounds.Length)];
+        audioSource.clip = popSound;
+        audioSource.Play();
 
         //var button = Instantiate(closeButton, newAd.transform.position + randomCorner(newAd), Quaternion.identity, newAd.transform);
     }
